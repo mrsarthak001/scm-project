@@ -432,3 +432,83 @@ void food::food_menu(void)
         getch();
     }
 
+//**************
+//  FUNCTION TO DISPLAY CUSTOMER DETAIL
+//**************
+
+    void cust_detail()
+    {
+        int c;
+        do
+        {
+            cleardevice();
+            setfillstyle(7,1);
+            floodfill(0,0,4);
+            setfillstyle(7,10);
+            bar(50,80,600,470);
+            rectangle(50,80,600,470);
+            setfillstyle(1,7);
+            bar(57,87,593,463);
+            rectangle(57,87,593,463);
+            setcolor(9);
+            setfillstyle(1,2);
+            bar(210,140,410,254);
+            rectangle(210,140,410,158);
+            rectangle(210,140,410,174);
+            rectangle(210,140,410,190);
+            rectangle(210,140,410,206);
+            rectangle(210,140,410,222);
+            rectangle(210,140,410,238);
+            rectangle(210,140,410,254);
+            setcolor(4);
+            settextstyle(1,0,4);
+            outtextxy(160,20,"CUSTOMER DETAIL ");
+            setcolor(14);
+            line(163,60,475,60);
+            setcolor(4);
+            settextstyle(1,0,1);
+            outtextxy(225,137,"  CHOICES ARE :-");
+            setcolor(4);
+            settextstyle(1,0,1);
+            outtextxy(210,154," 1. APPEND");
+            outtextxy(210,170," 2. MODIFY");
+            outtextxy(210,186," 3. DELETE ");
+            outtextxy(210,202," 4. DELETE ALL ");
+            outtextxy(210,218," 5. DISPLAY ");
+            outtextxy(210,234," 6. MAIN MENU");
+            setcolor(4);
+            settextstyle(7,0,2);
+            outtextxy(210,300,"ENTER CHOICE :- ");
+            gotoxy(53,20);
+            cin>>c;
+            switch(c)
+            {
+            case 1:
+            {
+                cust_app();
+                break;
+            }
+            case 2:
+            {
+                cust_mod();
+                break;
+            }
+            case 3:
+            {
+                cust_del();
+                break;
+            }
+            case 4:
+            {
+                cust_adel();
+                break;
+            }
+            case 5:
+            {
+                cust_disp();
+                break;
+            }
+            }
+        }
+        while(c!=6); //END OF WHILE
+    }
