@@ -37,35 +37,60 @@ public:
     void del_all();
 };
 
-/ / * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-/ / FUNCTI ON FOR DI SPLAYI NG FOOD MENU
-/ / * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-voi d f ood: : f ood_menu( voi d)
+//*******************
+//  FUNCTION FOR DISPLAYING FOOD MENU
+//*******************
+
+void food::food_menu(void)
 {
-cl ear devi ce( ) ;
-set f i l l st yl e( 7, 1) ;
-f l oodf i l l ( 0, 0, 4) ;
-set f i l l st yl e( 7, 10) ;
-bar ( 17, 40, 605, 420) ;
-r ect angl e( 17, 40, 605, 420) ;
-set f i l l st yl e( 1, 10) ;
-bar ( 24, 47, 598, 413) ;
-r ect angl e( 24, 47, 598, 413) ;
-p1. cl ose( ) ;
-c=0;
-p1. open( " f ood. t xt " , i os: : i n| i os: : bi nar y) ;
-out t ext xy( 30, 50, " S. N. I TEM NAME PRI CE" ) ;
-got oxy( 4, 5) ;
-char h[ 5] , pr [ 15] ;
-whi l e( p1. r ead( ( char * ) &f , si zeof ( f ) ) )
-{
-c++;
-set t ext st yl e( 4, 0, 1) ;
-i t oa( c, h, 10) ;
-out t ext xy( 40, 60+20* c, h) ;
-out t ext xy( 150, 60+20* c, f . name) ;
-i t oa( f . pr i ce, pr , 10) ;
-out t ext xy( 390, 60+20* c, pr ) ;
-} / / END OF WHI LE
-    
-    
+    cleardevice();
+    setfillstyle(7,1);
+    floodfill(0,0,4);
+    setfillstyle(7,10);
+    bar(17,40,605,420);
+    rectangle(17,40,605,420);
+    setfillstyle(1,10);
+    bar(24,47,598,413);
+    rectangle(24,47,598,413);
+    p1.close();
+    c=0;
+    p1.open("food.txt",ios::in|ios::binary);
+    outtextxy(30,50,"S.N.       ITEM NAME             PRICE");
+    gotoxy(4,5);
+    char h[5],pr[15];
+    while(p1.read((char*)&f,sizeof(f)))
+    {
+        c++;
+        settextstyle(4,0,1);
+        itoa(c,h,10);
+        outtextxy(40,60+20*c,h);
+        outtextxy(150,60+20*c,f.name);
+        itoa(f.price,pr,10);
+        outtextxy(390,60+20*c,pr);
+    }//END OF WHILE
+    p1.close();
+    settextstyle(15,0,1);
+    outtextxy(30,325,"DO YOU WANT TO ADD AN ITEM - (Y/N)");
+    gotoxy(60,20);
+    cin>>ap;
+    if(ap=='y'||ap=='Y')
+    {
+        app_fmenu();
+        //CALLING APPEND FUNCTION
+    }
+    else
+    {
+        if(ap=='n'||ap=='N')
+        {
+            outtextxy(30,360,"DO YOU WANT TO DELETE ALL  (Y/N)");
+            char ch;
+            gotoxy(60,23);
+            cin>>ch;
+            if(ch=='y'||ch=='Y')
+            {
+                del_all();
+                //CALLING DELETE FUNCTION
+            }
+        }
+    }
+}
