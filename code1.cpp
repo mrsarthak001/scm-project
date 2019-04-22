@@ -58,12 +58,11 @@ void food::app_fmenu(void)
 //************
 //  FUNCTION FOR CUSTOMER BILL
 //***********
-
-    void cust_bill()
-    {
-        int cho;
-        do
-        {
+void cust_bill()
+{
+     int cho;
+      do
+      {
             cleardevice();
             f1.close();
             setfillstyle(7,1);
@@ -99,16 +98,14 @@ void food::app_fmenu(void)
             gotoxy(67,21);
             cin>>cho;
             choose(cho);
-        }
-        while(cho!=3); //END OF WHILE
-    }
+     }
+     while(cho!=3); //END OF WHILe//
+}
 
-    void choose(int a)
+void choose(int a)
+{
+    switch(a)
     {
-        switch(a)
-        {
-
-
         case 1:
         {
             room_bill();
@@ -119,7 +116,6 @@ void food::app_fmenu(void)
             j.food_bill();
             break;
         }
-        case 3:
-            break;
-        }
-    }
+        case 3:break;
+   }
+}
