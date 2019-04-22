@@ -167,3 +167,68 @@ void food::food_menu(void)
                     itoa(bill,bl,10);
                     outtextxy(515,300,bl);
                 }
+                else
+                {
+                    char d[5],m[5],h[5],mt[5],dy[5],bl[5];
+                    bill=days*150;
+                    setcolor(4);
+                    outtextxy(30,270," NAME    ARRIVAL    DEPARTURE    DAYS IN    BILL ");
+                    setcolor(1);
+                    settextstyle(1,0,1);
+                    outtextxy(40,300,p.c_name);
+                    itoa(p.a_date,d,10);
+                    outtextxy(150,300,d);
+                    outtextxy(160,300,"/");
+                    itoa(p.a_month,m,10);
+                    outtextxy(170,300,m);
+                    itoa(dt,h,10);
+                    outtextxy(270,300,h);
+                    outtextxy(280,300,"/");
+                    itoa(mth,mt,10);
+                    outtextxy(290,300,mt);
+                    itoa(days,dy,10);
+                    outtextxy(405,300,dy);
+                    itoa(bill,bl,10);
+                    outtextxy(510,300,bl);
+                }
+                f1.close();
+                int count=1;
+                f1.open("cust.txt",ios::in| ios::binary);
+                fstream f2;
+                while(f1.read((char*)&p,sizeof(p)))
+                {
+                    if(p.c_no==no)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        f2.open("dup.txt",ios::app|ios::binary);
+                        p.c_no=count;
+                        f2.write((char*)&p,sizeof(p));
+                        count++;
+                        f2.close();
+                    }
+                }//END OF WHILE
+                remove("cust.txt");
+                rename("dup.txt","cust.txt");
+                f1.close();
+            }
+        }//END OF WHILE
+        if(c==0)
+        {
+            for(int i=0; i<=10; i++)
+            {
+                settextstyle(1,0,3);
+                setcolor(4);
+                outtextxy(150,300,"CUSTOMER IS NOT PRESENT");
+                delay(100);
+                setcolor(WHITE);
+                outtextxy(150,300,"CUSTOMER IS NOT PRESENT");
+                delay(100);
+            }
+        }
+
+
+        getch();
+    }
