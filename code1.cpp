@@ -243,3 +243,31 @@ void food::food_menu(void)
 
         getch();
     }
+
+
+p1.close();
+    settextstyle(15,0,1);
+    outtextxy(30,325,"DO YOU WANT TO ADD AN ITEM - (Y/N)");
+    gotoxy(60,20);
+    cin>>ap;
+    if(ap=='y'||ap=='Y')
+    {
+        app_fmenu();
+        //CALLING APPEND FUNCTION
+    }
+    else
+    {
+        if(ap=='n'||ap=='N')
+        {
+            outtextxy(30,360,"DO YOU WANT TO DELETE ALL  (Y/N)");
+            char ch;
+            gotoxy(60,23);
+            cin>>ch;
+            if(ch=='y'||ch=='Y')
+            {
+                del_all();
+                //CALLING DELETE FUNCTION
+            }
+        }
+    }
+}
