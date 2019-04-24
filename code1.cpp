@@ -271,3 +271,14 @@ p1.close();
         }
     }
 }
+
+//************
+//  FUNCTION TO DELETE FOOD MENU
+//**********
+void food::del_all()
+{
+    remove("food.txt");
+    p1.open("food.txt",ios::out);
+    p1.close();
+    c=0;
+}
