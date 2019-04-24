@@ -540,3 +540,17 @@ void food::food_menu(void)
         f1.open("cust.txt",ios::in|ios::binary);
         fstream f2;
         while(f1.read((char*)&p,sizeof(p)))
+            {
+            if(p.c_no==no)
+            {
+                continue;
+            }
+            else
+            {
+                f2.open("dup.txt",ios::app|ios::binary);
+                p.c_no=count;
+                f2.write((char*)&p,sizeof(p));
+                count++;
+                f2.close();
+            }
+        }
