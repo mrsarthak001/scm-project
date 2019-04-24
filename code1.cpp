@@ -512,3 +512,29 @@ void food::food_menu(void)
         }
         while(c!=6); //END OF WHILE
     }
+    
+//***************************
+//  FUNCTION FOR PASSWORD
+//***************************
+
+    void pass()
+    {
+        char passw[20];
+        for(;;)
+        {
+            hot_name();
+            setcolor(4);
+            setfillstyle(7,1);
+            floodfill(0,0,4);
+            setfillstyle(7,10);
+            bar(50,60,600,450);
+            rectangle(50,60,600,450);
+            setfillstyle(1,7);
+            bar(57,67,593,443);
+            rectangle(57,67,593,443);
+            setcolor(4);
+            settextstyle(7,0,1);
+            settextstyle(7,0,2) ;
+            outtextxy(200,220,"ENTER PASSWORD :-");
+            gotoxy(55,15);
+            cin>>passw;
