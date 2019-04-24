@@ -554,3 +554,9 @@ void food::food_menu(void)
                 f2.close();
             }
         }
+ remove("cust.txt");
+        rename("dup.txt","cust.txt");
+        f1.close();
+        getch();
+    }
+};
