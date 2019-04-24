@@ -512,3 +512,31 @@ void food::food_menu(void)
         }
         while(c!=6); //END OF WHILE
     }
+
+
+//**********************************************
+//  FUNCTION TO DELETE A CUSTOMER RECORD
+//**********************************************
+
+    void cust_del()
+    {
+        cleardevice();
+        f1.close();
+        setfillstyle(7,1);
+        floodfill(0,0,4);
+        setfillstyle(7,10);
+        bar(10,10,600,470);
+        rectangle(10,10,600,470);
+        setfillstyle(1,7);
+        bar(17,17,593,463);
+        rectangle(17,17,593,463);
+        setcolor(9);
+        setfillstyle(1,2);
+        setcolor(4);
+        int no,count=1;
+        outtextxy(30,42,"ENTER CUSTOMER NO TO BE DELETED");
+        gotoxy(65,4);
+        cin>>no;
+        f1.open("cust.txt",ios::in|ios::binary);
+        fstream f2;
+        while(f1.read((char*)&p,sizeof(p)))
