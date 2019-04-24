@@ -243,3 +243,137 @@ void food::food_menu(void)
 
         getch();
     }
+
+
+p1.close();
+    settextstyle(15,0,1);
+    outtextxy(30,325,"DO YOU WANT TO ADD AN ITEM - (Y/N)");
+    gotoxy(60,20);
+    cin>>ap;
+    if(ap=='y'||ap=='Y')
+    {
+        app_fmenu();
+        //CALLING APPEND FUNCTION
+    }
+    else
+    {
+        if(ap=='n'||ap=='N')
+        {
+            outtextxy(30,360,"DO YOU WANT TO DELETE ALL  (Y/N)");
+            char ch;
+            gotoxy(60,23);
+            cin>>ch;
+            if(ch=='y'||ch=='Y')
+            {
+                del_all();
+                //CALLING DELETE FUNCTION
+            }
+        }
+    }
+}
+
+//************
+//  FUNCTION TO DELETE FOOD MENU
+//**********
+void food::del_all()
+{
+    remove("food.txt");
+    p1.open("food.txt",ios::out);
+    p1.close();
+    c=0;
+}
+
+//  FUNCTION TO APPEND CUSTOMER
+//*************
+
+    void cust_app()
+    {
+        int ten,temp;
+        cleardevice();
+        f1.open("cust.txt",ios::app|ios::binary);
+        f1.seekg(0,ios::end);
+        ten=f1.tellg()/sizeof(p);
+        p.c_no=ten+1;
+        setfillstyle(7,1);
+        floodfill(0,0,4);
+        setfillstyle(7,10);
+        bar(17,50,605,470);
+        rectangle(17,50,605,470);
+        setfillstyle(1,7);
+        bar(24,57,598,463);
+        rectangle(24,57,598,463);
+        setcolor(4);
+        settextstyle(7,0,1);
+        outtextxy(30,70,"NAME");
+        gotoxy(50,6);
+        cin>>p.c_name;
+        outtextxy(30,120,"ADDRESS");
+        gotoxy(50,9);
+        gets(p.c_add);
+        outtextxy(30,170,"DATE OF ARRIVAL");
+        gotoxy(50,12);
+        cin>>p.a_date;
+        outtextxy(30,220,"MONTH OF ARRIVAL");
+        gotoxy(50,15);
+        cin>>p.a_month;
+        outtextxy(30,270,"YEAR OF ARRIVAL");
+        gotoxy(50,18);
+        cin>>p.a_year;
+        p.room_no=ten+1;
+        f1.write((char*)&p,sizeof(p));
+        f1.close();
+    }
+//  FUNCTION TO DISPLAY CUSTOMER IN HOTEL
+//****************
+
+    void cust_disp()
+    {
+        cleardevice();
+        f1.close();
+        setfillstyle(7,1);
+        floodfill(0,0,4);
+        setfillstyle(7,10);
+        bar(20,20,620,450);
+        rectangle(20,20,620,450);
+        setfillstyle(1,7);
+        bar(27,27,613,443);
+        rectangle(27,27,613,443);
+        setcolor(4);
+        setfillstyle(1,2);
+        settextstyle(7,0,1);
+        outtextxy(25,40," CUST NO      NAME     ADDRESS      ROOM.NO     DATE");
+        gotoxy(30,3);
+        int c=0;
+        f1.open("cust.txt",ios::in|ios::binary);
+        f1.seekg(0,ios::beg);
+        char h[5],pr[5],d[5],m[6];
+        while(f1.read((char*)&p,sizeof(p)))
+        {
+            c++;
+            setcolor(1);
+            settextstyle(1,0,1);
+            itoa(p.c_no,h,10);
+            outtextxy(55,50+20*c,h);
+            outtextxy(160,50+20*c,p.c_name);
+            outtextxy(280,50+20*c,p.c_add);
+            itoa(p.room_no,pr,10);
+            outtextxy(440,50+20*c,pr);
+            itoa(p.a_date,d,10);
+            outtextxy(550,50+20*c,d);
+            outtextxy(560,50+20*c,"/");
+            itoa(p.a_month,m,10);
+            outtextxy(570,50+20*c,m);
+        }//END OF WHILE
+        getch();
+        f1.close();
+    }
+//  FUNCTION TO DELETE ALL CUSTOMER RECORDS
+//*****************
+
+    void cust_adel()
+    {
+        remove("cust.txt");
+        f1.open("cust.txt",ios::out|ios::binary|ios::in);
+        p.c_no=0;
+        p.room_no=0;
+    }
