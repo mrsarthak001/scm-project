@@ -15,7 +15,7 @@
 //********************************************
 
 
-class food
+class food//initializing class name food//
 {
 private:
     fstream p1;
