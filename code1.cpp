@@ -225,6 +225,32 @@ void choose(int a)
    }
 }
 
+
+//****************
+//  FUNCTION FOR MODIFYING CUSTOMER DETAIL
+//****************
+
+void cust_mod()
+{
+        cleardevice();
+        f1.close();
+        setfillstyle(7,1);
+        floodfill(0,0,4);
+        setfillstyle(7,10);
+        bar(10,10,600,470);
+        rectangle(10,10,600,470);
+        setfillstyle(1,7);
+        bar(17,17,593,463);
+        rectangle(17,17,593,463);
+        setcolor(9);
+        setfillstyle(1,2);
+        setcolor(4);
+        int no;//,count=0;
+        outtextxy(30,42,"ENTER CUSTOMER NO TO BE MODIFIED");
+        gotoxy(65,4);
+        cin>>no;
+        f1.open("cust.txt",ios::in|ios::binary);
+=======
 //************
 //  FUNCTION TO DELETE FOOD MENU
 //**********
@@ -329,10 +355,39 @@ void food::food_menu(void)
         f1.close();
         f1.open("cust.txt",ios::in|ios::binary);
         int c=0;
-        while(f1.read((char*)&p,sizeof(p)))
+
+      while(f1.read((char*)&p,sizeof(p)))
         {
             if(p.c_no==no)
             {
+
+                f1.close();
+                int num=sizeof(p)*(no-1);
+                f1.open("cust.txt",ios::out|ios::ate|ios::binary);
+                f1.seekp(num,ios::beg);
+                outtextxy(30,110,"ENTER NEW RECORD ");
+                outtextxy(30,150,"NAME");
+                gotoxy(30,11);
+                cin>>p.c_name;
+                outtextxy(30,200,"ADDRESS");
+                gotoxy(30,14);
+                cin>>p.c_add;
+                outtextxy(30,250,"DATE");
+                gotoxy(30,17);
+                cin>>p.a_date;
+                outtextxy(30,300,"MONTH");
+                gotoxy(30,20);
+                cin>>p.a_month;
+                outtextxy(30,350,"YEAR");
+                gotoxy(30,23);
+                cin>>p.a_year;
+                f1.write((char*)&p,sizeof(p));
+                f1.close();
+            }
+        }//END OF WHILE
+        getch();
+}
+
                 c++;
                 if(p.a_month==mth)
                 {
