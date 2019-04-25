@@ -926,4 +926,38 @@ public:
         }
     }
 
+
+//*************
+//  FUNCTION OF CHOICE FOR INFORMATION
+//*************
+
+    void choice(int a)
+    {
+        switch(a)
+        {
+        case 1:
+        {
+            information();
+            break;
+        }
+        case 2:
+        {
+            cust.cust_detail();
+            break;
+        }
+        case 3:
+        {
+            d.food_menu();
+            break;
+        }
+        case 4:
+        {
+            cust.cust_bill();
+            break;
+        }
+
+        }
+    }
+
+
 //Main Function
