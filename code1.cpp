@@ -27,7 +27,7 @@ private:
         float price;
     } f;
 public:
-    food()
+    food()//initialized default constructor//
     {
         c=0;
     }
