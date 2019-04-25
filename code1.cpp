@@ -15,11 +15,11 @@
 //********************************************
 
 
-class food
+class food//initializing class name food//
 {
 private:
     fstream p1;
-    int c;
+    int c;//private variable initialized//
     char ap;
     struct fd
     {
@@ -27,7 +27,7 @@ private:
         float price;
     } f;
 public:
-    food()
+    food()//initialized default constructor//
     {
         c=0;
     }
@@ -920,7 +920,7 @@ public:
         settextstyle(1,0,3);
         outtextxy(150,450,"SHUTTING DOWN.. . .");
 
-        for(int i=0; i<=10; i++)
+        for(int i=0; i<=10; i++)//loop//
         {
             sound(1000*i);
             setbkcolor(i);
