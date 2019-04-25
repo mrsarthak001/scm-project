@@ -788,3 +788,49 @@ public:
         outtextxy(200,3,"THE TIME HOTEL");
         line(200,50,440,50);
     }
+//*****************************
+//  FUNCTION FOR MAIN MENU
+//*****************************
+
+    int mmenu()
+    {
+        cleardevice();
+        int c;
+        setfillstyle(7,1);
+        floodfill(0,0,4);
+        setfillstyle(7,10);
+        bar(50,80,600,470);
+        rectangle(50,80,600,470);
+        setfillstyle(1,7);
+        bar(57,87,593,463);
+        rectangle(57,87,593,463);
+        setcolor(9);
+        setfillstyle(1,2);
+        bar(210,140,410,238);
+        rectangle(210,140,410,158);
+        rectangle(210,140,410,174);
+        rectangle(210,140,410,190);
+        rectangle(210,140,410,206);
+        rectangle(210,140,410,222);
+        rectangle(210,140,410,238);
+        setcolor(WHITE);
+        settextstyle(4,0,4);
+        outtextxy(160,20,"HOTEL MANAGEMENT SYSTEM");
+        setcolor(14);
+        line(163,60,515,60);
+        setcolor(4);
+        settextstyle(1,0,1);
+        outtextxy(225,137,"  MAIN MENU");
+        outtextxy(210,154," 1. INFORMATION");
+        outtextxy(210,170," 2. CUSTOMER DETAIL");
+        outtextxy(210,186," 3. FOOD DETAIL ");
+        outtextxy(210,202," 4. CUSTOMER BILL ");
+        outtextxy(210,218," 5. EXIT ");
+        setcolor(4);
+        settextstyle(7,0,2);
+        outtextxy(210,300,"ENTER CHOICE :- ");
+        fflush(stdin);
+        gotoxy(53,20);
+        cin>>c;
+        return c;
+    }
