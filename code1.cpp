@@ -37,6 +37,7 @@ public:
     void del_all();
 };
 
+
 //***************************************
 // THIS CLASS CONTAINS INFORMATION
 //   RELATED TO CUSTOMER
@@ -892,6 +893,7 @@ public:
         return c;
     }
     }
+
 //************************
 //  FUNCTION OF ENDING
 //************************
@@ -925,6 +927,7 @@ public:
             nosound();
         }
     }
+
 
 
 //*************
