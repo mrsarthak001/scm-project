@@ -383,3 +383,60 @@ void food::food_menu(void)
         getch();
     }
 
+
+//*********
+//  FUNCTION FOR PASSWORD
+//*********
+
+    void pass()
+    {
+        char passw[20];
+        for(;;)
+        {
+            hot_name();
+            setcolor(4);
+            setfillstyle(7,1);
+            floodfill(0,0,4);
+            setfillstyle(7,10);
+            bar(50,60,600,450);
+            rectangle(50,60,600,450);
+            setfillstyle(1,7);
+            bar(57,67,593,443);
+            rectangle(57,67,593,443);
+            setcolor(4);
+            settextstyle(7,0,1);
+            settextstyle(7,0,2) ;
+            outtextxy(200,220,"ENTER PASSWORD :-");
+            gotoxy(55,15);
+            cin>>passw;
+            if (strcmp(passw,"a")==0)
+            {
+                cleardevice();
+                break;
+            }
+            else
+            {
+                setcolor(4);
+                settextstyle(7,0,1);
+                for(int i=0; i<=10; i++)
+                {
+                    setcolor(4);
+                    outtextxy(200,320,"ENTER CORRECT  PASSWORD ");
+                    delay(100);
+                    setcolor(WHITE);
+                    outtextxy(200,320,"ENTER CORRECT  PASSWORD ");
+                    delay(100);
+                    settextstyle(7,0,1);
+                    outtextxy(200,340,"PRESS ANY KEY TO  CONTINUE");
+                }
+                cleardevice();
+
+            }
+        }
+        do
+        {
+            ch=mmenu();
+            choice(ch);
+        }
+        while(ch!=5); //END OF WHILE
+    }
