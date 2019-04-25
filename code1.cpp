@@ -776,3 +776,15 @@ public:
 };
 //END OF CLASS HOTEL
 
+
+//*****************************
+// FUNCTION FOR HOTEL NAME
+//************************
+
+    void hot_name()
+    {
+        settextstyle(4,0,5);
+        setcolor(WHITE);
+        outtextxy(200,3,"THE TIME HOTEL");
+        line(200,50,440,50);
+    }
