@@ -63,7 +63,7 @@ public:
         settextstyle(1,0,3);
         outtextxy(150,450,"SHUTTING DOWN.. . .");
 
-        for(int i=0; i<=10; i++)
+        for(int i=0; i<=10; i++)//loop//
         {
             sound(1000*i);
             setbkcolor(i);
