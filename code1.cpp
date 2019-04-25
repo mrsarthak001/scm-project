@@ -1066,11 +1066,11 @@ void main()
     outtextxy(40,60,"Thank you for viewing this project.");
     outtextxy(40,90,"I hope this project will help you to");
     outtextxy(40,120,"create a C++ project of your own.");
-    outtextxy(40,190,"***********************************");
-    outtextxy(40,220,"This Hotel Management System Project");
-    outtextxy(40,250,"             in C++                ");
-    outtextxy(40,280, "    is brought to you by");
-    outtextxy(40,310,"           Codewithc.com");
+    outtextxy(40,190,);
+    outtextxy(40,220,;
+    outtextxy(40,250,   );
+    outtextxy(40,280, "    ;
+    outtextxy(40,310,"         ;
     getch();
     cleardevice();
 
