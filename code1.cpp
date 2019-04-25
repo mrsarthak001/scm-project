@@ -964,3 +964,119 @@ public:
 
 
 //Main Function
+
+//**********************************************
+// THIS IS MAIN FUNCTION CALLING VARIOUS
+//   FUNCTIONS
+//**********************************************
+
+void main()
+{
+    clrscr();
+    int gm=DETECT,gd;
+    initgraph(&gm,&gd,"c:\\tc\\");
+    setbkcolor(BLUE);
+    setcolor(RED);
+    for(int i=0; i<=450; i++)
+    {
+        circle(305,250,i);
+        delay(3);
+    }
+    setcolor(GREEN);
+    settextstyle(1,0,11);
+    outtextxy(80,150,"CODEWITHC");
+    getch();
+    cleardevice();
+    setbkcolor(BLUE);
+    setcolor(RED);
+    for(i=0; i<=450; i++)
+    {
+        circle(305,250,i);
+        delay(3);
+    }
+    setcolor(GREEN);
+    settextstyle(1,0,9);
+    outtextxy(100,0,"PRESENTS");
+    outtextxy(270,120,"A");
+    outtextxy(100,240,"PROJECT");
+    outtextxy(250,360,"ON");
+    getch();
+    cleardevice();
+    setbkcolor(4);
+    setcolor(GREEN);
+    for(i=0; i<=9; i++)
+    {
+        settextstyle(1,0,i);
+        outtextxy(40+i,140+i," TIME HOTEL ");
+        sound(200*i);
+        delay(600);
+        nosound();
+        cleardevice();
+    }
+    outtextxy(46,146,"  TIME HOTEL");
+    getch();
+    control c;
+    // void acknow()
+    //{
+    // cleardevice();
+    setbkcolor(BLACK);
+    setfillstyle(7,1);
+    floodfill(0,0,4);
+    setfillstyle(7,10);
+    bar(17,50,605,470);
+    rectangle(17,50,605,470);
+    setfillstyle(1,7);
+    bar(24,57,598,463);
+    rectangle(24,57,598,463);
+    setcolor(5);
+    settextstyle(1,0,5);
+    outtextxy(85,5,"ACKNOWLEDGEMENT");
+    settextstyle(1,0,3);
+    setcolor(BLACK);
+    outtextxy(80,60,"I wish to express my deep and heartiest");
+    outtextxy(40,90,"thanks to my C++ and all other computer teachers whose");
+    outtextxy(40,120,"valueable advice and guidance helped me a  ");
+    outtextxy(40,150,"lot in doing this project from conception to");
+    outtextxy(40,180,"completion ");
+    outtextxy(100,210,"I am also very thankful to my colleagues ");
+    outtextxy(40,240,"and friends who gave me moral encouragement ");
+    outtextxy(40,270,"to make this project a success.");
+    outtextxy(40,300,"Brought to you BY:-         ");
+    outtextxy(40,330,"Codewithc.com                ");
+    outtextxy(40,360,"(C Mini Projects      ");
+    outtextxy(40,390,"Source Codes      ");
+    outtextxy(40,420,"Tutorials, Games and More!!!     ");
+    getch();
+    cleardevice();
+
+    // FOR VERIFICATION
+    setfillstyle(7,1);
+    floodfill(0,0,4);
+    setfillstyle(7,10);
+    bar(17,50,605,470);
+    rectangle(17,50,605,470);
+    setfillstyle(1,7);
+    bar(24,57,598,463);
+    rectangle(24,57,598,463);
+    setcolor(5);
+    settextstyle(1,0,5);
+    outtextxy(120,5,"VERIFICATION");
+    settextstyle(1,0,3);
+    setcolor(BLACK);
+    outtextxy(40,60,"Thank you for viewing this project.");
+    outtextxy(40,90,"I hope this project will help you to");
+    outtextxy(40,120,"create a C++ project of your own.");
+    outtextxy(40,190,"***********************************");
+    outtextxy(40,220,"This Hotel Management System Project");
+    outtextxy(40,250,"             in C++                ");
+    outtextxy(40,280, "    is brought to you by");
+    outtextxy(40,310,"           Codewithc.com");
+    getch();
+    cleardevice();
+
+
+    c.pass();
+    c.bye();
+    closegraph();
+}
+//END OF MAIN FUNCTION
