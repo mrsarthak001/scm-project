@@ -19,7 +19,7 @@ class food//initializing class name food//
 {
 private:
     fstream p1;
-    int c;
+    int c;//private variable initialized//
     char ap;
     struct fd
     {
