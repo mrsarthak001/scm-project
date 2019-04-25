@@ -891,3 +891,37 @@ public:
         cin>>c;
         return c;
     }
+    }
+//************************
+//  FUNCTION OF ENDING
+//************************
+
+    void bye()
+    {
+        cleardevice();
+        setcolor(12);
+        settextstyle(1,0,5);
+        setbkcolor(BLUE);
+        outtextxy(70,150,"THANKS FOR VISITING");
+        setcolor(10);
+        settextstyle(1,0,8);
+        outtextxy(100,250,"PROJECT");
+        settextstyle(1,0,3);
+        outtextxy(150,450,"SHUTTING DOWN.. . .");
+        getch();
+        setcolor(12);
+        settextstyle(1,0,5);
+        outtextxy(70,150,"THANKS FOR VISITING");
+        setcolor(10);
+        settextstyle(1,0,8);
+        outtextxy(100,250,"PROJECT");
+        settextstyle(1,0,3);
+        outtextxy(150,450,"SHUTTING DOWN.. . .");
+
+        for(int i=0; i<=10; i++)
+        {
+            sound(1000*i);
+            setbkcolor(i);
+            nosound();
+        }
+    }
